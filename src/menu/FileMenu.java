@@ -126,7 +126,7 @@ public class FileMenu extends Menu
 			{
 				JFileChooser dialog = new JFileChooser();
 				FileNameExtensionFilter filter = new FileNameExtensionFilter(
-						"Tile Mapper files", "map");
+						"Tile Mapper files", "tmf");
 				dialog.setFileFilter(filter);
 				
 				int response = dialog.showSaveDialog(parentFrame); 
@@ -134,7 +134,7 @@ public class FileMenu extends Menu
 				{ 
 					currentMapFilePath = dialog.getSelectedFile().toString();
 					MapIO.exportProjectAsXML(dialog.getSelectedFile().toString(), parentFrame);
-					parentFrame.setTitle("Tile Mapper - " + currentMapFilePath + ".map");
+					parentFrame.setTitle("Tile Mapper - " + currentMapFilePath + ".tmf");
 					saveMapItem.setEnabled(true);
 				}
 			}

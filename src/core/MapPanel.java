@@ -264,6 +264,7 @@ public class MapPanel extends JPanel
 	{
 		for (int i : projectedTileIndexes)
 			tiles.get(i).setHovered(false);
+		
 		for (int i : projectedTileIndexes)
 			tiles.get(i).repaint();
 	}

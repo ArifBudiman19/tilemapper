@@ -313,7 +313,6 @@ public class MapIO
         SAXBuilder builder = new SAXBuilder();
         try 
         {
-        	
         	// Create XML document
             Document document = builder.build(new StringReader(xml));
             
@@ -388,7 +387,7 @@ public class MapIO
             // Output the file
             FileWriter file;
 			
-			// Check to see if the .map extension doesn't already exist on the file
+			// Check to see if the .tmf extension doesn't already exist on the file
 			if (!filePath.contains(".tmf"))
 				// If it doesn't, add it
 				file = new FileWriter(filePath + ".tmf");

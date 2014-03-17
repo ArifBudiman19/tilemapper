@@ -308,11 +308,11 @@ public class NewMapDialog extends JDialog
 	 */
 	private BufferedImage createImageFromColor(Color c)
 	{
-		BufferedImage temp = new BufferedImage(32, 32, BufferedImage.TYPE_INT_RGB);
+		BufferedImage temp = new BufferedImage(COLORPICKER_BOX_WIDTH, COLORPICKER_BOX_HEIGHT, BufferedImage.TYPE_INT_RGB);
 		
 		Graphics g = temp.getGraphics();
 		g.setColor(c);
-		g.fillRect(0, 0, 32, 32);
+		g.fillRect(0, 0, COLORPICKER_BOX_WIDTH, COLORPICKER_BOX_HEIGHT);
 		
 		return temp;
 	}

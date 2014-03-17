@@ -107,7 +107,6 @@ public class DrawMenu extends Menu
 	 */
 	class DrawCountActionListener implements ActionListener
 	{
-
 		public void actionPerformed(ActionEvent e) 
 		{
 			parentFrame.getMapPanel().setDrawCount(drawAmount());
