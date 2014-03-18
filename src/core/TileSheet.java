@@ -153,10 +153,14 @@ public class TileSheet
 		    	
 		    	// If all colors are the same
 		    	if (red == transRed && green == transGreen && blue == transBlue)
+		    	{
 		    		return true;
+		    	}
 		    	// If a pixel is completely transparent
 		    	if (alpha == 0)
+		    	{
 		    		return true;
+		    	}
 			}
 		}
 		
@@ -190,7 +194,9 @@ public class TileSheet
 		    	// If the pixel matches the specified transparent color
 		    	// Then set it to an absolute white with alpha at 0
 		    	if (red == transRed && green == transGreen && blue == transBlue)
+		    	{
 		    		i.setRGB(x, y, 0x00FFFFFF);
+		    	}
 			}
 		}
 		
@@ -227,7 +233,9 @@ public class TileSheet
 					objects.add(new AbstractTile(temp));
 				}
 				else
+				{
 					tiles.add(new AbstractTile(temp));
+				}
 			}
 		}
 	}

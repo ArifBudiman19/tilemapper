@@ -389,11 +389,15 @@ public class MapIO
 			
 			// Check to see if the .tmf extension doesn't already exist on the file
 			if (!filePath.contains(".tmf"))
+			{
 				// If it doesn't, add it
 				file = new FileWriter(filePath + ".tmf");
+			}
 			else
+			{
 				// Otherwise, don't add it
 				file = new FileWriter(filePath);
+			}
 			
             XMLOutputter outputter = new XMLOutputter(Format.getPrettyFormat());
             outputter.output(document, file);

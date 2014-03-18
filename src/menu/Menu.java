@@ -36,7 +36,9 @@ public abstract class Menu extends JMenu
 			
 			// If a separator has been specified, add it after the i'th element
 			if (i == separatorLoc)
+			{
 				add(new JSeparator());
+			}
 		}
 	}
 	

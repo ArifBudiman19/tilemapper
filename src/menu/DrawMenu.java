@@ -91,15 +91,25 @@ public class DrawMenu extends Menu
 	private int drawAmount()
 	{
 		if(button1.isSelected())
+		{
 			return 1;
+		}
 		else if (button2.isSelected())
+		{
 			return 2;
+		}
 		else if (button3.isSelected())
+		{
 			return 3;
+		}
 		else if (button5.isSelected())
+		{
 			return 5;
+		}
 		else
+		{
 			return 10;
+		}
 	}
 	
 	/**

@@ -73,9 +73,13 @@ public class MapTile extends JLabel
 		Graphics g = temp.getGraphics();
 		
 		if (tileLayer != null)
+		{
 			g.drawImage(tileLayer, 0, 0, this);
+		}
 		if (objectLayer != null)
+		{
 			g.drawImage(objectLayer, 0, 0, this);
+		}
 		
 		return temp;
 	}
@@ -108,10 +112,14 @@ public class MapTile extends JLabel
 		
 		// Paint the two tile layers
 		if (parentMapPanel.tileModeEnabled())
+		{
 			g.drawImage(tileLayer, 0, 0, this);
+		}
 		
 		if (parentMapPanel.objectModeEnabled())
+		{
 			g.drawImage(objectLayer, 0, 0, this);
+		}
 		
 		// Draw red tile to show collision mode
 		if (parentMapPanel.collisionModeEnabled() && collidable)
@@ -139,9 +147,13 @@ public class MapTile extends JLabel
 		objectLayerID = id;
 		
 		if (id != -1 && id != 0)
+		{
 			objectLayer = parentMapPanel.getObjectPanel().getTileImage(id);
+		}
 		else
+		{
 			objectLayer = null;
+		}
 	}
 	
 	/**
@@ -153,7 +165,9 @@ public class MapTile extends JLabel
 		tileLayerID = id;
 		
 		if (id != -1)
+		{
 			tileLayer = parentMapPanel.getTilePanel().getTileImage(id);
+		}
 	}
 
 	/**
@@ -163,9 +177,13 @@ public class MapTile extends JLabel
 	{
 		// Determine which tile should be drawn and then draw it
 		if (parentMapPanel.objectPanelSelectedLast())
+		{
 			setObjectLayerId(parentMapPanel.getObjectPanel().getSelectedTileIndex());
+		}
 		else
+		{
 			setTileLayerId(parentMapPanel.getTilePanel().getSelectedTileIndex());
+		}
 		
 		repaint();
 	}
@@ -186,13 +204,19 @@ public class MapTile extends JLabel
 				int currentIndex = index + i + (j * parentMapPanel.getWidthInTiles());
 				// Check to make sure that the tile index isn't out of bounds
 				if (currentIndex >= parentMapPanel.getTotalNumberOfTiles())
+				{
 					return;
+				}
 			
 				// Determine which tile should be drawn and then draw it
 				if (parentMapPanel.objectPanelSelectedLast())
+				{
 					parentMapPanel.getTile(currentIndex).setObjectLayerId(parentMapPanel.getObjectPanel().getSelectedTileIndex());
+				}
 				else
+				{
 					parentMapPanel.getTile(currentIndex).setTileLayerId(parentMapPanel.getTilePanel().getSelectedTileIndex());
+				}
 			
 				// Redraw
 				parentMapPanel.getTile(currentIndex).repaint();
@@ -238,9 +262,13 @@ public class MapTile extends JLabel
 	public byte getCollidable()
 	{
 		if (collidable)
+		{
 			return 1;
+		}
 		else
+		{
 			return 0;
+		}
 	}
 	/**
 	 * Sets whether or not a tile is collidable
@@ -249,9 +277,13 @@ public class MapTile extends JLabel
 	public void setCollidable(byte flag)
 	{
 		if (flag == 0)
+		{
 			collidable = false;
+		}
 		else
+		{
 			collidable = true;
+		}
 	}
 	
 	/**
@@ -281,16 +313,22 @@ public class MapTile extends JLabel
 					
 					// If it's only 1, call single tile draw method
 					if (drawCount == 1)
+					{
 						drawTile();
+					}
 					// Otherwise, draw multiple tiles
 					else
+					{
 						drawTiles(drawCount);
+					}
 					applyHoverColor();
 				}
 	
 				// If it is on, and clicked, toggle the collidable bool
 				else
+				{
 					collidable = !collidable;
+				}
 				repaint();
 				
 			}
@@ -303,7 +341,9 @@ public class MapTile extends JLabel
 					g.fillRect(0, 0, getWidth(), getHeight());
 				}
 				else
+				{
 					applyHoverColor();
+				}
 			}
 		}
 
@@ -319,15 +359,21 @@ public class MapTile extends JLabel
 					int drawCount = parentMapPanel.getDrawCount();
 					// If it's only 1, call single tile draw method
 					if (drawCount == 1)
+					{
 						drawTile();
+					}
 					// Otherwise, draw multiple tiles
 					else
+					{
 						drawTiles(drawCount);
+					}
 				}
 				
 				// If it is on, and clicked, toggle the collidable bool
 				else
+				{
 					collidable = !collidable;
+				}
 				repaint();
 			}
 		}

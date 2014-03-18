@@ -132,7 +132,9 @@ public class MapPanel extends JPanel
 		ArrayList<Byte> temp = new ArrayList<Byte>();
 		
 		for (int i = 0; i < tiles.size(); i++)
+		{
 			temp.add(tiles.get(i).getCollidable());
+		}
 			
 		return temp;
 	}
@@ -146,7 +148,9 @@ public class MapPanel extends JPanel
 		ArrayList<Integer> temp = new ArrayList<Integer>();
 		
 		for (int i = 0; i < tiles.size(); i++)
+		{
 			temp.add(tiles.get(i).getObjectLayerId());
+		}
 		
 		return temp;
 	}
@@ -164,7 +168,9 @@ public class MapPanel extends JPanel
 		ArrayList<Integer> temp = new ArrayList<Integer>();
 		
 		for (int i = 0; i < tiles.size(); i++)
+		{
 			temp.add(tiles.get(i).getTileLayerId());
+		}
 		
 		return temp;
 	}
@@ -253,7 +259,9 @@ public class MapPanel extends JPanel
 	public void repaintAllTiles()
 	{
 		for(MapTile t : tiles)
+		{
 			t.repaint();
+		}
 	}
 	
 	/**
@@ -263,10 +271,14 @@ public class MapPanel extends JPanel
 	public void repaintProjectedTiles()
 	{
 		for (int i : projectedTileIndexes)
+		{
 			tiles.get(i).setHovered(false);
+		}
 		
 		for (int i : projectedTileIndexes)
+		{
 			tiles.get(i).repaint();
+		}
 	}
 	
 	/**

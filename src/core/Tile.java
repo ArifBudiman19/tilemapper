@@ -104,15 +104,23 @@ public class Tile extends JLabel
 		{
 			// Tell the MapPanel which panel was selected last
 			if (parentTilePanel.isObjectPanel())
+			{
 				parentTilePanel.getMapPanel().setObjectPanelSelectedLast(true);
+			}
 			else
+			{
 				parentTilePanel.getMapPanel().setObjectPanelSelectedLast(false);
+			}
 			
 			// Tell the parent TilePanel that this tile has been selected
 			if (id < 0)
+			{
 				parentTilePanel.setSelectedTile(0);
+			}
 			else
+			{
 				parentTilePanel.setSelectedTile(id);
+			}
 			repaint();
 		}
 		
@@ -122,15 +130,23 @@ public class Tile extends JLabel
 			{
 				// Tell the MapPanel which panel was selected last
 				if (parentTilePanel.isObjectPanel())
+				{
 					parentTilePanel.getMapPanel().setObjectPanelSelectedLast(true);
+				}
 				else
+				{
 					parentTilePanel.getMapPanel().setObjectPanelSelectedLast(false);
+				}
 				
 				// Tell the parent TilePanel that this tile has been selected
 				if (id < 0)
+				{
 					parentTilePanel.setSelectedTile(0);
+				}
 				else
+				{
 					parentTilePanel.setSelectedTile(id);
+				}
 				repaint();
 			}
 		}

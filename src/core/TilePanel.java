@@ -91,7 +91,9 @@ public class TilePanel extends JPanel
 		
 		// Add the blank tiles to the panel
 		for (int i = 0; i < blankTiles; i++)
+		{
 			add(new JLabel());
+		}
 		
 		// Convert the layout into a compact grid
 		SpringUtilities.makeCompactGrid(this, // parent

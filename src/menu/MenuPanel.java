@@ -74,7 +74,9 @@ public class MenuPanel extends JMenuBar
 		
 		// Set their status
 		for (JMenuItem item : mapDependentItems)
+		{
 			item.setEnabled(flag);
+		}
 	}
 	
 	/**
